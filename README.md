@@ -55,48 +55,6 @@ This project improves data freshness, consistency, and scalability. It also make
 It is especially useful in organizations that need daily reporting, near-real-time operational insights, or a foundation for machine learning pipelines. The same architecture can often be adapted as data sources and business needs evolve.
 
 
-💻💻 Tools and Discussions:
-
-Apache Spark
-Apache Spark is the main data processing engine for large-scale transformations. It is used to read raw data, clean it, join multiple datasets, aggregate records, and handle batch or streaming workloads efficiently. Spark is fast because it processes data in memory and can run across multiple nodes in a cluster.
-
-In this project, Spark is usually the part that performs the heavy lifting, such as parsing logs, deduplicating records, standardizing columns, and creating final business-ready tables. It is especially useful when the data volume is too large for a single machine.
-
-Databricks
-Databricks is a managed platform that makes it easier to run Spark jobs without managing the infrastructure yourself. It provides notebooks, collaborative development, job scheduling, cluster management, and a unified environment for ingestion, transformation, and orchestration.
-
-In a project like this, Databricks is often where Spark code is developed and executed. It can also support both batch and streaming pipelines, and it is commonly used to build lakehouse-style architectures where raw and curated data live together in a structured way.
-
-Apache Airflow
-Apache Airflow is the orchestration layer of the pipeline. It schedules tasks, manages dependencies between jobs, retries failed steps, and gives visibility into whether the pipeline is running successfully.
-
-For example, Airflow can run the pipeline every morning, first extracting data, then triggering Spark transformations, then running validation checks, and finally loading the curated output into the warehouse. This makes the whole process repeatable and automated rather than manually run by engineers.
-
-SQL
-SQL is used for querying, transforming, and validating structured data. In ETL projects, SQL is often used to filter records, join tables, create summary metrics, build reporting tables, and perform data quality checks.
-
-It is especially important in the loading stage, where transformed data is written into analytics tables that business users can query. Even when Spark does the large-scale processing, SQL remains a core tool for final transformations and warehouse modeling.
-
-Data Lake or Landing Zone
-A data lake or landing zone stores the raw data before it is transformed. This layer preserves the source data in its original form, which is useful for traceability, debugging, and reprocessing if something goes wrong.
-
-This is usually where data first lands after extraction from source systems. From there, engineers can build raw, refined, and curated layers so the pipeline stays organized and easier to maintain.
-
-Data Warehouse or Lakehouse
-A data warehouse or lakehouse is the final destination for cleaned and modeled data. This is the layer used by BI dashboards, analysts, and sometimes machine learning workflows.
-
-In this project, the warehouse stores business-ready tables with consistent schemas and validated metrics. A lakehouse setup can combine the flexibility of a data lake with the structured querying capability of a warehouse.
-
-Monitoring and Logging
-Monitoring tools track job status, execution time, failures, retries, and data quality issues. Logging helps engineers debug problems by showing what happened at each stage of the pipeline.
-
-This part of the stack is very important in automated ETL because pipelines can fail for many reasons, such as bad source data, network issues, or schema changes. Good monitoring makes the system reliable and easier to operate over time.
-
-Working Procedure:
-
-These tools usually work as a stack. Airflow starts the workflow, Databricks and Spark process the data, SQL shapes the final tables, and the warehouse or lakehouse serves the results to analytics users.
-
-A simple flow looks like this: source systems feed raw storage, Spark transforms the data, SQL refines it, Airflow coordinates the steps, and monitoring ensures the pipeline stays healthy. That combination is what makes the project “automated” and production-ready.
 
 
 Architecture of the Project:
