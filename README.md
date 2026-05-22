@@ -131,7 +131,7 @@ This is the final business value of the pipeline.
 
 ## <p style="font-size: 35px;">🚀🚀 Working Design:</p>
 
-This architecture is popular because it separates raw data, processing logic, and business-ready output into different layers. That makes the pipeline easier to scale, maintain, test, and debug.
+This architecture is choosen because it separates raw data, processing logic, and business-ready output into different layers. That makes the pipeline easier to scale, maintain, test, and debug.
 
 
 
