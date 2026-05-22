@@ -30,15 +30,16 @@ This orchestration layer makes the pipeline truly automated rather than just a s
 
 The project commonly uses these technologies together:
 
-1. Apache Spark for distributed data processing and large-scale transformations.
+🌟 Apache Spark for distributed data processing and large-scale transformations.
 
-2. Databricks for managed Spark execution and collaborative development.
+🧱 Databricks for managed Spark execution and collaborative development.
 
-3. Airflow for scheduling, dependency management, and retries.
+✈️ Airflow for scheduling, dependency management, and retries.
 
-4. SQL for data preparation, aggregation, and warehouse loading.
+💻 SQL for data preparation, aggregation, and warehouse loading.
 
-5. Storage layers such as data lakes or lakehouses for raw and curated data.
+🫙 Storage layers such as data lakes or lakehouses for raw and curated data.
+
 
 📂 Dataset
 This project uses an Revenue Sales dataset, included in the Dataset folder.
@@ -54,7 +55,7 @@ This project improves data freshness, consistency, and scalability. It also make
 It is especially useful in organizations that need daily reporting, near-real-time operational insights, or a foundation for machine learning pipelines. The same architecture can often be adapted as data sources and business needs evolve.
 
 
-Tools and Discussions:
+💻💻 Tools and Discussions:
 
 Apache Spark
 Apache Spark is the main data processing engine for large-scale transformations. It is used to read raw data, clean it, join multiple datasets, aggregate records, and handle batch or streaming workloads efficiently. Spark is fast because it processes data in memory and can run across multiple nodes in a cluster.
